@@ -1,58 +1,48 @@
-# ✈️ Flight Ticket Price Prediction
+# ✈️ Flight Price Prediction using Machine Learning
 
-This project focuses on predicting the prices of flight tickets using machine learning. It uses two regression models – **Linear Regression** and **Random Forest Regressor** – to predict ticket prices based on features such as airline, source, destination, duration, stops, and timings.
+This project predicts flight ticket prices using supervised machine learning techniques. The model is trained on a Kaggle dataset containing features like airline, source, destination, duration, and more.
 
----
+## 📁 Dataset
 
-## 📌 Problem Statement
+- Source: [Kaggle - Flight Price Prediction](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction)
+- Columns include Airline, Source, Destination, Duration, Total Stops, etc.
 
-Build a machine learning model that accurately predicts flight ticket prices based on flight-related features. This can help travelers estimate costs and assist platforms in dynamic pricing strategies.
+## 🛠️ Tech Stack
 
----
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- scikit-learn
 
-## 📂 Dataset
+## 🧠 Models Used
 
-The dataset contains information about:
-- `Airline` – Airline carrier  
-- `Source` – Departure city  
-- `Destination` – Arrival city  
-- `Date_of_Journey`, `Dep_Time`, `Arrival_Time` – Date and time of flight  
-- `Duration` – Total travel time  
-- `Total_Stops` – Number of stops  
-- `Price` – (Target) Ticket price in INR
+- Linear Regression
+- Random Forest Regressor
 
-📥 Dataset Source:  
-🔗 [Flight Price Prediction Dataset – Kaggle](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction)
+## 📊 Evaluation Metrics
 
----
+| Model                 | MAE      | RMSE     | R² Score |
+|----------------------|----------|----------|----------|
+| Linear Regression     | 2036.82  | 3043.03  | 0.56     |
+| Random Forest Regressor | 1201.02 | 2165.11  | 0.77     |
 
-## 🛠️ Technologies Used
+## 🔧 Feature Engineering
 
-- **Python**
-- **pandas**, **NumPy** – Data preprocessing
-- **matplotlib**, **seaborn** – Visualization
-- **scikit-learn** – ML model training and evaluation
-- **Linear Regression**, **Random Forest Regressor**
+- Encoded categorical features (Airline, Source, Destination)
+- Transformed Duration column
+- Handled missing values
 
----
+## 🚀 Future Scope
 
-## 📊 EDA & Feature Engineering
+- Deploy as a responsive web app using Flask/Streamlit
+- Add real-time inputs for flight predictions
+- Improve model performance through hyperparameter tuning
 
-- Extracted new features from `Date_of_Journey`, `Dep_Time`, `Arrival_Time`
-- Converted `Duration` to total minutes
-- One-hot encoded categorical variables: `Airline`, `Source`, `Destination`, etc.
-- Removed irrelevant or duplicate features
-- Split dataset into train and test using `train_test_split`
+## 💻 Getting Started
 
----
-
-## 🧠 Model Training
-
-### 🔹 Linear Regression
-
-```python
-from sklearn.linear_model import LinearRegression
-
-model_lr = LinearRegression()
-model_lr.fit(X_train, y_train)
-y_pred_lr = model_lr.predict(X_test)
+```bash
+git clone https://github.com/DivyanshMalik04/Flight-Price-Prediction.git
+cd Flight-Price-Prediction
+# Open the notebook and run cells in order
